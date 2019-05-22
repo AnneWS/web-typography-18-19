@@ -5,92 +5,495 @@ Show them when they receive the class 'on'
 Hide them when they receive the class 'off'
 Feel free to adjust the defaults to your needs.
 ********************************************** */
+
+body {
+    background-color: black;
+}
+
+.heart {
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    width: 10em;
+    animation: heartBeat 3s infinite;
+    animation-delay: 1s;
+    left: 85%;
+}
+
+svg::before {
+    content: 'heartmeter Officer';
+}
+
+#video-placeholder {
+    margin-top: 15em;
+    margin-left: 15em;
+}
+
+p {
+    color: white;
+    text-align: center;
+}
+
 #closed-captions p {
-	opacity: 0;
-	transition: .05s;
-	position: absolute;
+    opacity: 0;
+    transition: .05s;
+    position: absolute;
+    text-align: center;
+    margin-left: 10em;
 }
+
 #closed-captions .on {
-	opacity: 1;
+    opacity: 1;
+    text-align: center;
 }
+
 #closed-captions .off {
-	transition: .2s;
-	opacity: 0;
+    transition: .2s;
+    opacity: 0;
+    text-align: center;
 }
+
 .voice1 {
-	font-style: italic;
+    font-family: "Brenner Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.voice1::before {
+    content: 'Computer: ';
+    text-align: center;
+}
+
+.voice2 {
+    font-family: "Brenner Slab";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
+}
+
+.voice2::before {
+    content: 'Officer: ';
+    text-align: center;
+}
+
+#zenuw {
+    font-family: "Brenner sans condensed";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
+}
+
+.voice4 {
+    font-family: "Brenner Script";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
 }
 
 /* **********************************************
-The first paragraph, with extended timing for 
-	all siblings. Basically what it does is that
-	it shows the text after a delay, which 
-	corresponds with the time that the word is
-	spoken.
+The first paragraph, with extended timing for
+    all siblings. Basically what it does is that
+    it shows the text after a delay, which
+    corresponds with the time that the word is
+    spoken.
 You probably want to change the styling.
 ********************************************** */
+
 .p0 span {
-	opacity: 0;
-	font-family: brenner;
+    opacity: 0;
 }
+
 .p0.on span:first-of-type {
-	opacity: 1;
-	transition: 0s;
-	font-weight: 200;
+    opacity: 1;
+    transition: 0s;
 }
+
 .p0.on span:nth-of-type(2) {
-	opacity: 1;
-	transition: 0s .4s;
-	margin-right: -.25em;
-	font-weight: 400;
+    opacity: 1;
+    transition: 0s .4s;
+    margin-right: -.25em;
 }
+
 .p0.on span:nth-of-type(3) {
-	opacity: 1;
-	transition: 0s .5s;
-	margin-right: -.25em;
-	font-weight: 600;
+    opacity: 1;
+    transition: 0s .5s;
+    margin-right: -.25em;
 }
+
 .p0.on span:nth-of-type(4) {
-	opacity: 1;
-	transition: 0s .7s;
-	margin-right: -.25em;
-	font-weight: 800;
+    opacity: 1;
+    transition: 0s .7s;
+    margin-right: -.25em;
 }
+
 .p0.on span:nth-of-type(5) {
-	opacity: 1;
-	transition: 0s 1.1s;
-	margin-right: -.25em;
-	font-family: "brenner sans";
+    opacity: 1;
+    transition: 0s 1.1s;
+    margin-right: -.25em;
 }
+
 .p0.on span:nth-of-type(6) {
-	opacity: 1;
-	transition: 0s 1.4s;
-	margin-right: -.25em;
-	font-family: "brenner display";
+    opacity: 1;
+    transition: 0s 1.4s;
+    margin-right: -.25em;
 }
+
 .p0.on span:nth-of-type(7) {
-	opacity: 1;
-	transition: 0s 1.7s;
-	margin-right: -.25em;
-	font-family: "brenner script";
+    opacity: 1;
+    transition: 0s 1.7s;
+    margin-right: -.25em;
 }
+
 .p0.on span:nth-of-type(8) {
-	opacity: 1;
-	transition: 0s 2s;
-	font-family: "brenner script";
+    opacity: 1;
+    transition: 0s 2s;
 }
+
 .p0.on span:nth-of-type(9) {
-	opacity: 1;
-	transition: 0s 3s;
-	font-family: "brenner Sans condensed";
+    opacity: 1;
+    transition: 0s 3s;
 }
+
 .p0.on span:nth-of-type(10) {
-	opacity: 1;
-	transition: 0s 3.2s;
-	font-family: "brenner mono";
+    opacity: 1;
+    transition: 0s 3.2s;
 }
+
 .p0.on span:nth-of-type(11) {
-	opacity: 1;
-	transition: 0s 3.7s;
-	font-family: "brenner slab";
+    opacity: 1;
+    transition: 0s 3.7s;
+}
+
+.voice3 {
+    color: #676B52;
+    font-size: 3em;
+    font-family: "Brenner Sans";
+    font-style: normal;
+    font-weight: 800;
+}
+
+.p6.on {
+    animation: fromLeft 1s;
+}
+
+/*code die te maken heeft met het geluid*/
+
+.sound0 {
+    animation: goingUp 1s forwards;
+}
+
+.sound1 {
+    animation: stepsDown 4s forwards;
+}
+
+.sound2 {
+    background-image: linear-gradient(to right, red, blue);
+}
+
+.sound3 {
+    background-image: linear-gradient(to right, blue, red);
+}
+
+.sound4 {
+    background-image: linear-gradient(black, black);
+/*    animation: 0.5s;*/
+}
+
+.sound5 {
+    animation: draaien 0.5s alternate 2;
+}
+
+/*.sound4 iframe {
+    animation: goingDown 2s forwards;
+}*/
+
+.sound6 .heart {
+    animation: heartFast 1s infinite;
+}
+
+.sound6 #video-placeholder {
+    animation: shake 1s 2;
+}
+
+.sound7 {
+    background-image: linear-gradient(black, black);
+    animation: bgcolor 50s linear;
+}
+
+/*.sound8 {
+    animation: goingDown 1s forwards;
+}*/
+
+.sound9 .heart {
+    animation: heartBeat 3s infinite;
+}
+
+.sound11 {
+    animation: 0.5s shake 1.5s 1;
+    background-image: linear-gradient(black, black);
+}
+
+.sound13 {
+    background-image: url(123.gif);
+}
+
+.sound13 .heart {
+    animation: heartFast 1s infinite;
+}
+
+.sound14 {
+    background-image: url(DTvUQor.jpg);
+}
+
+.sound14 .heart {
+    animation: heartBeat 3s infinite;
+}
+
+.sound15 {
+    background-image: url(123.gif);
+}
+
+.sound15 .heart {
+    animation: heartFast 1s infinite;
+}
+
+.sound16 {
+    background-image: url(DTvUQor.jpg);
+}
+
+.sound16 #video-placeholder {
+    animation: zooming 4s alternate 2;
+}
+
+.sound16 .heart {
+    animation: heartBeat 3s infinite;
+}
+
+.sound17 {
+    background-image: url(123.gif);
+}
+
+.sound17 .heart {
+    animation: heartFast 1s infinite;
+}
+
+.sound18 {
+    background-image: url(DTvUQor.jpg);
+}
+
+.sound18 .heart {
+    animation: heartBeat 3s infinite;
+}
+
+.sound19 {
+    background-image: url(123.gif);
+}
+
+.sound19 .heart {
+    animation: heartFast 1s infinite;
+}
+
+.sound20 {
+    background-image: url(DTvUQor.jpg);
+}
+
+.sound20 .heart {
+    animation: heartBeat 3s infinite;
+}
+
+.sound21 {
+    background-image: url(123.gif);
+}
+
+.sound21 .heart {
+    animation: heartFast 1s infinite;
+}
+
+.sound22 {
+    background-image: url(DTvUQor.jpg);
+}
+
+
+.sound22 .heart {
+    animation: heartBeat 3s infinite;
+}
+
+.sound22 #video-placeholder {
+    animation: 2s theEnd 3s 1;
+}
+
+/*animation codes*/
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes goingUp {
+    0% {
+        transform: translateY(0em)
+    }
+    100% {
+        transform: translateY(-15em)
+    }
+}
+
+@keyframes stepsDown {
+    0% {
+        transform: translateY(-15em)
+    }
+    25% {
+        transform: translateY(-10em)
+    }
+    100% {
+        transform: translateY(-5em)
+    }
+}
+
+@keyframes draaien {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes bgcolor {
+    0% {
+        background-image: linear-gradient(black, black);
+    }
+    25% {
+        background-image: linear-gradient(#2b2b2b, #2b2b2b);
+    }
+    50% {
+        background-image: linear-gradient(#474747, #474747);
+    }
+    100% {
+        background-image: linear-gradient(#636363, #636363);
+    }
+}
+
+@keyframes goingDown {
+    0% {
+        transform: translateY(-5em)
+    }
+    100% {
+        transform: translateY(0em)
+    }
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translate(-100%, 0);
+    }
+    50% {
+        transform: translate( 0%, 0);
+    }
+}
+
+@keyframes heartFast {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zooming {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2);
+    }
+}
+
+@keyframes theEnd {
+    0% {
+        transform: translateY(0em);
+    }
+    100% {
+        transform: translateY(500em);
+        opacity: 0
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    #video-placeholder {
+        width: 1000px;
+        height: 500px;
+        margin-left: 10em;
+    }
+
+    #closed-captions p {
+        margin-left: 7em;
+    }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    #video-placeholder {
+        width: 700px;
+        height: 350px;
+        margin-left: 7em;
+    }
+
+    #closed-captions p {
+        margin-left: 5em;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    #video-placeholder {
+        width: 500px;
+        height: 250px;
+        margin-left: 7em;
+    }
+
+    #closed-captions p {
+        margin-left: 7em;
+        font-size: 1em;
+    }
 }
