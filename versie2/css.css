@@ -1,0 +1,506 @@
+/* **********************************************
+Basic mechanics
+Hide all paragraphs by default
+Show them when they receive the class 'on'
+Hide them when they receive the class 'off'
+Feel free to adjust the defaults to your needs.
+********************************************** */
+
+body {
+    background-color: black;
+}
+
+#video-placeholder {
+    margin-top: 15em;
+    margin-left: 15em;
+    clip-path: inset(13.5% 5.5% 12.5% 5.5%);
+}
+
+p {
+    color: white;
+    text-align: center;
+}
+
+#closed-captions p {
+    opacity: 0;
+    transition: .05s;
+    position: absolute;
+    text-align: center;
+    margin-left: 10em;
+}
+
+#closed-captions .on {
+    opacity: 1;
+    text-align: center;
+}
+
+#closed-captions .off {
+    transition: .2s;
+    opacity: 0;
+    text-align: center;
+}
+
+.voice1 {
+    font-family: "Brenner Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: -22em;
+}
+
+.voice1::before {
+    content: 'Computer: ';
+    text-align: center;
+}
+
+.voice2 {
+    font-family: "Brenner Slab";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
+    margin-top: -4em;
+}
+
+.voice2::before {
+    content: 'Officer: ';
+    text-align: center;
+}
+
+#zenuw {
+    font-family: "Brenner sans condensed";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
+    filter: opacity(0.5);
+}
+
+.voice4 {
+    font-family: "Brenner Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
+    margin-top: -20em;
+    color: black;
+}
+
+.voice4::before {
+    content: 'LAPD: ';
+}
+
+/* **********************************************
+The first paragraph, with extended timing for
+    all siblings. Basically what it does is that
+    it shows the text after a delay, which
+    corresponds with the time that the word is
+    spoken.
+You probably want to change the styling.
+********************************************** */
+
+.p0 span {
+    opacity: 0;
+}
+
+.p0.on span:first-of-type {
+    opacity: 1;
+    transition: 0s;
+}
+
+.p0.on span:nth-of-type(2) {
+    opacity: 1;
+    transition: 0s .4s;
+    margin-right: -.25em;
+}
+
+.p0.on span:nth-of-type(3) {
+    opacity: 1;
+    transition: 0s .5s;
+    margin-right: -.25em;
+}
+
+.p0.on span:nth-of-type(4) {
+    opacity: 1;
+    transition: 0s .7s;
+    margin-right: -.25em;
+}
+
+.p0.on span:nth-of-type(5) {
+    opacity: 1;
+    transition: 0s 1.1s;
+    margin-right: -.25em;
+}
+
+.p0.on span:nth-of-type(6) {
+    opacity: 1;
+    transition: 0s 1.4s;
+    margin-right: -.25em;
+}
+
+.p0.on span:nth-of-type(7) {
+    opacity: 1;
+    transition: 0s 1.7s;
+    margin-right: -.25em;
+}
+
+.p0.on span:nth-of-type(8) {
+    opacity: 1;
+    transition: 0s 2s;
+}
+
+.p0.on span:nth-of-type(9) {
+    opacity: 1;
+    transition: 0s 3s;
+}
+
+.p0.on span:nth-of-type(10) {
+    opacity: 1;
+    transition: 0s 3.2s;
+}
+
+.p0.on span:nth-of-type(11) {
+    opacity: 1;
+    transition: 0s 3.7s;
+}
+
+.voice3 {
+    color: white;
+    font-size: 1em;
+    font-family: "Brenner Serif";
+    font-style: normal;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-top: -25em;
+    text-shadow: red 3px 3px;
+}
+
+.p6.on {
+    animation: fromLeft 1s;
+}
+
+.p49.on {
+    margin-top: 0.5em;
+}
+
+.p58.on span:nth-of-type(2) {
+    opacity: 1;
+}
+
+.p72.on span:nth-of-type(3) {
+    opacity: 1;
+}
+
+/*code die te maken heeft met het geluid*/
+.sound0 {
+    background-image: url(tenor.gif);
+    background-repeat: no-repeat;
+    background-size: 1920px;
+}
+
+.sound1 #video-placeholder {
+    animation: pulse 3s;
+}
+
+.sound2 {
+    animation: turnAround 0.5s alternate 2;
+}
+
+.sound3 {
+    animation: goingUp 1s forwards;
+}
+
+.sound4 {
+    animation: goingDown 1s forwards, 1s shake 0.2s;
+}
+
+.sound5{
+    animation: goingUp 0.5s forwards;
+}
+
+.sound6 {
+    background-image: none;
+}
+
+.sound7 #video-placeholder {
+    animation: goingDown 0.5s forwards, 1s shake 0.2s;
+}
+
+.sound8 {
+    animation: peepTone 50s linear !important;
+    margin-top: -10em;
+}
+
+.sound9 {
+    animation: goingUp 0.5s forwards;
+}
+
+.sound10 {
+    animation: goingDown 1s forwards, 1s shake 0.2s;
+}
+
+.sound11 {
+    animation: goingUp 0.5s forwards;
+}
+
+.sound13 {
+    background-color: mediumseagreen;
+}
+
+.sound14 {
+    background-color: black;
+    animation: zooming 1s alternate 2;
+}
+
+.sound15 {
+
+}
+
+.sound16 {
+    background-image: url(123.gif);
+}
+
+.sound17 {
+    background-image: url(DTvUQor.jpg);
+}
+
+.sound18 {
+    background-image: url(123.gif);
+}
+
+.sound19 {
+    background-image: none;
+}
+
+.sound19 #video-placeholder {
+    animation: zooming 4s alternate 2;
+}
+
+.sound20 {
+    background-image: url(123.gif);
+}
+
+.sound21 {
+    background-image: url(DTvUQor.jpg);
+}
+
+.sound22 {
+    background-image: url(123.gif);
+}
+
+.sound23 {
+    animation: zooming 4s alternate 2;
+    background-image: url(DTvUQor.jpg);
+}
+
+.sound24 {
+    background-image: url(123.gif);
+}
+
+.sound25 {
+    background-image: url(DTvUQor.jpg);
+}
+
+/*animation codes*/
+@keyframes pulse {
+    25% {
+        transform: scale(1.2);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes goingUp {
+    0% {
+        transform: translateY(0em)
+    }
+    100% {
+        transform: translateY(-10em)
+    }
+}
+
+@keyframes goingDown {
+    0% {
+        transform: translateY(-10em)
+    }
+    100% {
+        transform: translateY(5em)
+    }
+}
+
+@keyframes turnAround {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translate(-100%, 0);
+    }
+    50% {
+        transform: translate( 0%, 0);
+    }
+}
+
+@keyframes peepTone {
+    0% {
+        background-color: black;
+    }
+    25% {
+        background-color: black;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes zooming {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes background {
+  0% { background-color: #f99; }
+  100% { background-color: white; }
+}
+
+@keyframes smallWorden {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+/*
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+*/
+
+/*
+@keyframes draaien {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}*/
+
+
+
+/*@keyframes bgcolor {
+    0% {
+        background-image: linear-gradient(black, black);
+    }
+    25% {
+        background-image: linear-gradient(#2b2b2b, #2b2b2b);
+    }
+    50% {
+        background-image: linear-gradient(#474747, #474747);
+    }
+    100% {
+        background-image: linear-gradient(#636363, #636363);
+    }
+}*/
+/*
+@keyframes heartFast {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+*/
+
+
+
+@media screen and (max-width: 1500px) {
+    #video-placeholder {
+        width: 1000px;
+        height: 500px;
+        margin-left: 10em;
+    }
+
+    #closed-captions p {
+        margin-left: 7em;
+    }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    #video-placeholder {
+        width: 700px;
+        height: 350px;
+        margin-left: 7em;
+    }
+
+    #closed-captions p {
+        margin-left: 5em;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    #video-placeholder {
+        width: 500px;
+        height: 250px;
+        margin-left: 7em;
+    }
+
+    #closed-captions p {
+        margin-left: 7em;
+        font-size: 1em;
+    }
+}
